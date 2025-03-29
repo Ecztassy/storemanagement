@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="App2.SecondaryWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid x:Name="RootGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Main Content Area -->
+        <Grid x:Name="MainContent" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top Bar -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Title Text -->
+                <TextBlock x:Name="WelcomeTextBlock"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,10,0,10" />
+
+                <!-- Navigation Buttons -->
+                <Button Content="Components"
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        Click="NavigateToComponentsPage" />
+
+                <Button Content="Clients"
+                        Grid.Column="2"
+                        HorizontalAlignment="Right"
+                        Click="NavigateToClientsPage" />
+            </Grid>
+
+            <!-- Navigation Content -->
+            <Frame x:Name="ContentFrame" Grid.Row="1" Grid.Column="0" />
+        </Grid>
+    </Grid>
+</Window>
